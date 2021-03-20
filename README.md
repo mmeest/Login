@@ -21,10 +21,14 @@
 - [Navigation](#navigation)
 - [Hiding Password](#hiding-password)
 
+<hr>
+
 ### Tools needed
 * Visual Studio           - https://visualstudio.microsoft.com/
 * Microsoft SQL Server    - https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 * Entity Framework        - https://docs.microsoft.com/en-us/ef/
+
+<hr>
 
 ### Components
 | Type | Name | Value |
