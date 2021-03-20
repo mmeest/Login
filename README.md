@@ -43,6 +43,8 @@
 | Config | ./Web.config | For authentication settings |
 | Config | ./App_Start/RouteConfig.cs | For routing |
 
+<hr>
+
 ### Database
 For our app we create new database named 'Office' with table 'Employee' :
 
@@ -54,6 +56,8 @@ For our app we create new database named 'Office' with table 'Employee' :
 
 'Id' column is Primary Key and with Identity
 
+<hr>
+
 ### Creating Application
 1. In Visual Studio we create new 'ASP.NET Web Application' with 'MVC'\
 
@@ -64,6 +68,8 @@ with 'EF Designer from database' and New Connection: with 'Office' database and 
 with Model class 'Employee' and Data context class 'OfficeEntities' and name it 'EmployeesController'
 
 With it we have created a full CRUD operation methods to our db table 'Employees'
+
+<hr>
 
 ### Authentication
 Available in *System.Web.Security* namespace\
@@ -90,6 +96,8 @@ namespace Login.Controllers
     {
 ```
 
+<hr>
+
 ### Users Table
 We'll add 'User' table to our 'Office' database:
 
@@ -102,6 +110,8 @@ We'll add 'User' table to our 'Office' database:
 'Id' column is Primary Key and with Identity
 
 On Visual Studio in 'Model1.edmx' we 'Update Model from Database' and select 'User' table.
+
+<hr>
 
 ### Membership
 In Models folder we add new class 'Membership' with 3 properties
@@ -121,6 +131,8 @@ namespace Login.Models
     }
 }
 ```
+
+<hr>
 
 ### Login view
 On 'AccountController' we right click on GET action Login() and add view 'Login' with 'Create' template and 'Membership' Model class
@@ -154,11 +166,15 @@ And add using
 using Login.Models;
 ```
 
+<hr>
+
 ### Routing
 On 'RouteConfig.cs' we route our application to 'Employees'
 ```
 defaults: new { controller = "Employees", action = "Index", id = UrlParameter.Optional }
 ```
+
+<hr>
 
 ### Signup
 In 'AccountController.cs' we add sign up methods
@@ -207,6 +223,8 @@ We add to 'AccountController.cs'
 using System.Web.Security;
 ```
 
+<hr>
+
 ### Navigation
 Next we modify our navigation bar '_Layout.cshtml' according to user login
 ```
@@ -227,6 +245,8 @@ Next we modify our navigation bar '_Layout.cshtml' according to user login
     </ul>
 </div>
 ```
+
+<hr>
 
 ### Hiding Password
 To display dots instead of password we modify our 'Login.cshtml' and 'Signup.cshtml' password line from 'EditorFor' to 'PasswordFor'
