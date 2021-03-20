@@ -1,4 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/34022590/111647879-86a65e80-880b-11eb-9eac-bbc59cba6eb4.jpg" width="300px"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/34022590/111371494-2cd65500-86a2-11eb-8479-f2241d6b6e51.jpg" width="300px"></p>
 
 <h1 align="center">
     <strong>ASP.NET User login</strong>
@@ -7,7 +7,7 @@
     <p>ASP.NET Application with register/login users to interact with database</p>
 </h3>
 
-## Contents
+### Contents
 - [Tools needed](#tools-needed)
 - [Components](#components)
 - [Database](#database)
@@ -21,12 +21,12 @@
 - [Navigation](#navigation)
 - [Hiding Password](#hiding-password)
 
-## Tools needed
+### Tools needed
 * Visual Studio           - https://visualstudio.microsoft.com/
 * Microsoft SQL Server    - https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 * Entity Framework        - https://docs.microsoft.com/en-us/ef/
 
-## Components
+### Components
 | Type | Name | Value |
 |-|-|-|
 | Model | ./Model1.edmx | Database connection |
@@ -39,7 +39,7 @@
 | Config | ./Web.config | For authentication settings |
 | Config | ./App_Start/RouteConfig.cs | For routing |
 
-## Database
+### Database
 For our app we create new database named 'Office' with table 'Employee' :
 
 | Column Name | Data Type | 
@@ -50,7 +50,7 @@ For our app we create new database named 'Office' with table 'Employee' :
 
 'Id' column is Primary Key and with Identity
 
-## Creating Application
+### Creating Application
 1. In Visual Studio we create new 'ASP.NET Web Application' with 'MVC'\
 
 Right click on solution and add new item 'ADO.NET Entity Data Model' named 'Model1'\
@@ -61,7 +61,7 @@ with Model class 'Employee' and Data context class 'OfficeEntities' and name it 
 
 With it we have created a full CRUD operation methods to our db table 'Employees'
 
-## Authentication
+### Authentication
 Available in *System.Web.Security* namespace\
 To implement
 * Set **mode** in webconfig
@@ -86,7 +86,7 @@ namespace Login.Controllers
     {
 ```
 
-## Users Table
+### Users Table
 We'll add 'User' table to our 'Office' database:
 
 | Column Name | Data Type |
@@ -99,7 +99,7 @@ We'll add 'User' table to our 'Office' database:
 
 On Visual Studio in 'Model1.edmx' we 'Update Model from Database' and select 'User' table.
 
-## Membership
+### Membership
 In Models folder we add new class 'Membership' with 3 properties
 ```
 using System;
@@ -118,7 +118,7 @@ namespace Login.Models
 }
 ```
 
-## Login view
+### Login view
 On 'AccountController' we right click on GET action Login() and add view 'Login' with 'Create' template and 'Membership' Model class
 
 Next we add httppost action 'Login'
@@ -150,13 +150,13 @@ And add using
 using Login.Models;
 ```
 
-## Routing
+### Routing
 On 'RouteConfig.cs' we route our application to 'Employees'
 ```
 defaults: new { controller = "Employees", action = "Index", id = UrlParameter.Optional }
 ```
 
-## Signup
+### Signup
 In 'AccountController.cs' we add sign up methods
 ```
 // GET: Account
@@ -203,7 +203,7 @@ We add to 'AccountController.cs'
 using System.Web.Security;
 ```
 
-## Navigation
+### Navigation
 Next we modify our navigation bar '_Layout.cshtml' according to user login
 ```
 <div class="navbar-collapse collapse">
@@ -224,8 +224,11 @@ Next we modify our navigation bar '_Layout.cshtml' according to user login
 </div>
 ```
 
-## Hiding Password
+### Hiding Password
 To display dots instead of password we modify our 'Login.cshtml' and 'Signup.cshtml' password line from 'EditorFor' to 'PasswordFor'
 ```
 @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
 ```
+
+
+<p align="center"><h1>HAPPY CODING !!! :)</h1></p>
